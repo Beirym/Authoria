@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/auth.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="container">
+            <div class="auth-block">
+                <img class="long-logo" src="{% static 'img/SVG/long-logo.svg' %}">
+
+                {% block content %}
+                    <div class="fields">
+                        {% block fields %}{% endblock %}
+                    </div>
+
+                    <div class="buttons">
+                        {% block buttons %}{% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+        
+    {% block scripts %}
+        <script src="{% static 'js/validation.js' %}"></script>
+        <script src="{% static 'js/auth.js' %}"></script>
+    {% endblock %}
+{% endblock %}

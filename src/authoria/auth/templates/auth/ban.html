@@ -1,0 +1,13 @@
+{% extends 'auth/auth.html' %}
+{% load static %}
+
+{% block content %}
+    <p>
+        Слишком много попыток.
+        Доступ временно ограничен.
+        Попробуйте снова через <span class="bold">{{ auth_ban_mins }} мин.</span> 
+    </p>
+{% endblock %}
+
+{% block scripts %}{% endblock %}
+

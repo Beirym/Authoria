@@ -1,0 +1,20 @@
+{% extends 'auth/auth.html' %}
+{% load static %}
+
+{% block title %} Авторизация {% endblock %}
+
+{% block fields %}
+    <input id="username_or_email" class="field" type="text" placeholder="Имя пользователя или e-mail">
+    <input id="password" class="field" type="password" placeholder="Пароль">
+{% endblock %}
+
+{% block buttons %}
+    <button class="action-button" 
+            onclick="authRequest('{{ csrf_token }}', 'login')">
+        Войти
+    </button>
+    <p class="change-auth-type">
+        Нет аккаунта? 
+        <a href="{% url 'signup' %}">Зарегистрироваться</a>
+    </p>
+{% endblock %}
