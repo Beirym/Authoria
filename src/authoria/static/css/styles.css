@@ -1,0 +1,15 @@
+@import 'reset.css';
+@import 'fonts.css';
+
+/* Main settings */
+
+body {
+    font-family: "Inter";
+    background: #ffffff;
+}
+
+wrapper {
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+}
