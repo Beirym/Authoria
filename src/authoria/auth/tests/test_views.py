@@ -23,6 +23,9 @@ class AuthTestCase(TestCase):
 
     def test_signup_and_login(self):
         # Sign Up
+        response = self.client.get(reverse('signup'))
+        self.assertEqual(response.status_code, 200)
+
         signup_data = {
             'auth_data': json.dumps({
                 'username': self.username,
@@ -39,7 +42,15 @@ class AuthTestCase(TestCase):
         user = User.objects.filter(username=self.username).first()
         self.assertIsNotNone(user)
 
+        # Delete the session that was created after registration
+        session = self.client.session
+        session.clear()
+        session.save()
+
         # Log In
+        response = self.client.get(reverse('login'))
+        self.assertEqual(response.status_code, 200)
+
         login_data = {
             'auth_data': json.dumps({
                 'username_or_email': self.username,
