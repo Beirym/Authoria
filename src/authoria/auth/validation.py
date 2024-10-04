@@ -14,24 +14,24 @@ class Validator:
             user = User.objects.only('password', 'password_salt').get(
                 Q(username=username_or_email) | Q(email=username_or_email)
             )
-
-            if checkPassword(password, user.password, user.password_salt) is False:
-                errors.append({
-                    'field': 'password',
-                    'text': 'Неверный пароль',
-                })
-
         except User.DoesNotExist:
             errors.append({
                 'field': 'username_or_email', 
                 'text': 'Такого пользователя не существует'
             })
-
         except User.MultipleObjectsReturned:
             errors.append({
                 'field': 'username_or_email', 
                 'text': 'Для входа используйте имя пользователя'
             })
+
+        # Check password
+        if len(errors) == 0:
+            if checkPassword(password, user.password, user.password_salt) is False:
+                errors.append({
+                    'field': 'password',
+                    'text': 'Неверный пароль',
+                })
 
         return errors
 

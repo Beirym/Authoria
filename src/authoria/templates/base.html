@@ -16,8 +16,9 @@
 		{% block links %}{% endblock %}
 	</head>
     <body>
-		<body>
+		<div>
 			{% block body %}
+				{% include 'inc/header.html' %}
 				<wrapper>
 					{% block content %}{% endblock %}
 				</wrapper>
@@ -26,12 +27,11 @@
 			<div class="modal-window-zone">
 				{% include 'inc/modal_windows.html' %}
 			</div>
-		</body>
+		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script src="{% static 'js/elements.js' %}" async defer></script>
 		<script src="{% static 'js/regexes.js' %}" async defer></script>
-		<script src="{% static 'js/modal_windows.js' %}" async defer></script>
 		<script src="{% static 'js/exceptions.js' %}" async defer></script>
 	</body>
 </html>

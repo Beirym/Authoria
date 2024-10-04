@@ -1,0 +1,15 @@
+@media (max-width: 800px) {
+    body {
+        background-color: #ffffff;
+    }
+
+    .auth-block {
+        width: 100%;
+        height: 100%;
+        align-content: center;
+    }
+
+    .auth-block .fields {
+        margin: 0 auto;
+    }
+}

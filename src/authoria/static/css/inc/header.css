@@ -1,0 +1,152 @@
+header {
+    height: 60px;
+    margin-bottom: 30px;
+    align-content: center;
+    background-color: #F5F5F5;
+}
+
+wrapper {
+    display: flex;
+    max-width: 1230px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    height: 38px;
+}
+
+
+.middle-zone {
+    display: block;
+    margin: 0 auto;
+}
+
+.right-zone {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    column-gap: 15px;
+}
+
+.nav-links li a {
+    display: flex;
+    column-gap: 5px;
+    font-size: 16px;
+    align-items: center;
+    color: #1E1E1E;
+}
+
+.nav-links li a img {
+    height: 20px;
+}
+
+img[id="chats"]:hover {
+    content: url('../../icons/header/nav/hover/chats.svg');
+}
+img[id="notifications"]:hover {
+    content: url('../../icons/header/nav/hover/notifications.svg');
+}
+img[id="support"]:hover {
+    content: url('../../icons/header/nav/hover/support.svg');
+}
+
+.nav-links li a h3 {
+    padding: 5px;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #c76be07d;
+}
+
+.nav-links li:hover a {
+    color: #7c7c7c;
+}
+
+
+/* Full screen navbar menu */
+#slideout-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #c0c0c0b3;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+#slideout-menu a {
+    margin: 20px 0;
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+#slideout-menu a:hover {
+    color: #ffffff;
+    transition: 0.25s;
+}
+
+.slide-nav {
+    display: grid;
+    height: 50%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slide-nav .horizontal-links {
+    display: flex;
+    column-gap: 5px;
+    justify-content: space-between;
+}
+
+#nav-button-open {
+    display: none;
+}
+
+#nav-button-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+#nav-button-close:hover {
+    content: url('../../icons/header/nav/hover/nav-button-close.svg');
+}
+
+#slideout-menu.open {
+    right: 0;
+}
+
+
+.profile {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: #000000;
+}
+
+.profile .avatar {
+    height: 32px;
+    border-radius: 100%;
+}
+
+.profile:hover p {
+    color: #c76be0;
+}

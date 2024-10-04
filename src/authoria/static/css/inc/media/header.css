@@ -1,0 +1,26 @@
+@media (max-width: 800px) {
+    .middle-zone, .right-zone {
+        display: none;
+    }
+
+    #nav-button-open {
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    #nav-button-open:hover {
+        content: url('../../../icons/header/nav/hover/nav-button-open.svg');
+    }
+
+    .profile .avatar {
+        order: 1;
+    }
+    .profile p {
+        order: 2;
+    }
+    .profile:hover p {
+        color: #ffffff;
+        transition: 0.25s;
+    }
+}

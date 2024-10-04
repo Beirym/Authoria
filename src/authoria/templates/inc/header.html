@@ -1,0 +1,97 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/inc/header.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/inc/media/header.css' %}">
+
+<header>
+    <wrapper>
+        <a href="{% url 'main' %}">
+            <img class="logo" src="{% static 'img/SVG/short-logo.svg' %}">
+        </a>
+
+        {% with request as r %}
+            <nav class="middle-zone">
+                <ul class="nav-links" style="column-gap: 30px;">
+                    <li>
+                        <a href="#" class="medium">Мои работы <h3>0</h3></a>
+                    </li>
+                    <li>
+                        <a href="#" class="medium">Избранное <h3>0</h3></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="right-zone">
+                <nav>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="#">
+                                <img id="chats" src="{% static 'icons/header/nav/chats.svg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img id="notifications" src="{% static 'icons/header/nav/notifications.svg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img id="support" src="{% static 'icons/header/nav/support.svg' %}">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a href="#" class="profile">
+                    <p class="medium">Username</p>
+                    <img class="avatar" src="">
+                </a>
+            </div>
+
+            <!-- Full screen navbar menu for little displays -->
+            <img src="{% static 'icons/header/nav/nav-button-open.svg' %}"
+                id="nav-button-open"
+                alt="Menu"
+            />
+
+            <div id="slideout-menu">
+                <img id="nav-button-close" 
+                     src="{% static 'icons/header/nav/nav-button-close.svg' %}" 
+                     alt="Close Menu"
+                />
+
+                <a href="#" class="profile">
+                    <p class="medium">Username</p>
+                    <img class="avatar" src="">
+                </a>
+
+                <nav class="slide-nav">
+                    <ul>
+                        <li><a href="#"><p>Мои работы</p></a></li>
+                        <li><a href="#"><p>Избранное</p></a></li>
+                    </ul>
+                    
+                    <ul class="horizontal-links">
+                        <li>
+                            <a href="#">
+                                <img id="chats" src="{% static 'icons/header/nav/chats.svg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img id="notifications" src="{% static 'icons/header/nav/notifications.svg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img id="support" src="{% static 'icons/header/nav/support.svg' %}">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        {% endwith %}
+    </wrapper>
+</header>
+
+<script src="{% static 'js/inc/nav.js' %}" async defer></script>
